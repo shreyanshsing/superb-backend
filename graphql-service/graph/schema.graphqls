@@ -1,0 +1,33 @@
+type User {
+  id: Int!
+  username: String!
+  email: String!
+  fullName: String!
+  avatar: String
+  interests: [Int!]!
+  communities: [Int!]
+  posts: [Int!]
+  rating: Int
+  level: Int
+  aboutMe: String
+  links: [String!]
+  publicProfileURL: String
+}
+
+input GetUserInput {
+  id: Int!
+}
+
+input CreateUserInput {
+  email: String!
+  fullName: String!
+  password: String!
+}
+
+type Query {
+  getUser(input: GetUserInput!): User!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User!
+}
